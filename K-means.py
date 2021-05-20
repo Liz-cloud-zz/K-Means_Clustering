@@ -33,11 +33,11 @@ def assignment(Centoroids_list1,Centoroids_list3,Centoroids_list2,Data_list,Clus
 
         # find the cluster each point belongs to
         if(distance1<distance2) & (distance1<distance3):
-            Clustures_list1.append(x)
+            Clustures_list1.append(x+1)
         elif (distance2<distance1) & (distance2<distance3):
-            Clustures_list2.append(x)
+            Clustures_list2.append(x+1)
         else:
-            Clustures_list3.append(x)
+            Clustures_list3.append(x+1)
 
 #  Recompute the centroids of the newly formed clusters
 def recompute(Data_list,Cluster_list):
@@ -46,7 +46,7 @@ def recompute(Data_list,Cluster_list):
    sum_x=0
    sum_y=0
    for i in range(len(Cluster_list)):
-       pos=Cluster_list[i]
+       pos=Cluster_list[i]-1
        x=Data_list[0][pos]
        y=Data_list[1][pos]
        sum_x=sum_x+x
