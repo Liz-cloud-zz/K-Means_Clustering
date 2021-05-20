@@ -41,23 +41,23 @@ def assignment(Centoroids_list1,Centoroids_list3,Centoroids_list2,Data_list,Clus
 
 #  Recompute the centroids of the newly formed clusters
 def recompute(Data_list,Clustures_list1,Clustures_list2,Clustures_list3,Centoroids_list1,Centoroids_list3,Centoroids_list2):
-    size1=len(Clustures_list1)
-    size2=len(Clustures_list2)
-    size3=len(Clustures_list3)
-    #generate random clusters
-    value1=randint(0,size1)
-    value2=randint(0,size2)
-    value3=randint(0,size3)
-
-    position=Clustures_list1[value1]
+    #compute the means of all points in the assigned to the cluster
+    sum=0
+    for i in range(len(Clustures_list1)):
+        sum=sum+Clustures_list1[i];
+    position=sum/len(Clustures_list1)
     Centoroids_list1.insert(0,Data_list[0][position])
     Centoroids_list1.insert(1,Data_list[1][position])
 
-    position=Clustures_list2[value2]
+    for i in range(len(Clustures_list2)):
+        sum=sum+Clustures_list2[i]
+    position=sum/len(Clustures_list2)
     Centoroids_list2.insert(0,Data_list[0][position])
     Centoroids_list2.insert(1,Data_list[1][position])
 
-    position=Clustures_list3[value3]
+    for i in range(len(Clustures_list3)):
+        sum=sum+Clustures_list3[i]
+    position=sum/len(Clustures_list3)
     Centoroids_list3.insert(0,Data_list[0][position])
     Centoroids_list3.insert(1,Data_list[1][position])
 
@@ -82,7 +82,7 @@ Centoroids_list1=[2,10]
 Centoroids_list2=[5,8]
 Centoroids_list3=[1,2]
 
-while (True):
+for i in range(100000):
     Iteration_num=1
     Prev_Centroid1=Centoroids_list1
     Prev_Centroid2=Centoroids_list2
@@ -113,25 +113,51 @@ while (True):
         if(flag3==flag4) & (flag3==flag5):
             break
         else:
-            print("Iteration",end='')
-            print (Iteration_num, end='\n')
-            print("Cluster 1:", end=' ')
-            print (*Clustures_list1, sep=',')
-            print ("Centroid: (",end='')
-            print (*Centoroids_list, sep=',')
-            print (")", end='\n')
+            print("Iteration ",Iteration_num)
 
-            print("Cluster 2: ")
-            print (*Clustures_list2, sep=',')
-            print ("Centroid: (",end="")
-            print (*Centoroids_list, sep=',')
-            print (")", end='\n')
+            print("Cluster1: ")
+            for i in range (len(Clustures_list1)):
+                print(Clustures_list1[i])
+            print('\n')
+            print("Centroid1: (")
+            for i in range (len(Centoroids_list1)):
+                print(Centoroids_list1[i])
 
-            print("Cluster 3: ")
-            print (*Clustures_list3, sep=',')
-            print ("Centroid: (",end='')
-            print (*Centoroids_list, sep=',')
-            print (")", end='\n')
+            print("Cluster2: ")
+            for i in range (len(Clustures_list2)):
+                print(Clustures_list2[i])
+            print('\n')
+            print("Centroid2: (")
+            for i in range (len(Centoroids_list2)):
+                print(Centoroids_list2[i])
+
+            print("Cluster3: ")
+            for i in range (len(Clustures_list3)):
+                print(Clustures_list3[i])
+            print('\n')
+            print("Centroid3: (")
+            for i in range (len(Centoroids_list3)):
+                print(Centoroids_list3[i])
+
+            # print("Iteration",end='')
+            # print (Iteration_num, end='\n')
+            # print("Cluster 1:", end=' ')
+            # print (*Clustures_list1, sep=',')
+            # print ("Centroid: (",end='')
+            # print (*Centoroids_list, sep=',')
+            # print (")", end='\n')
+            #
+            # print("Cluster 2: ")
+            # print (*Clustures_list2, sep=',')
+            # print ("Centroid: (",end="")
+            # print (*Centoroids_list, sep=',')
+            # print (")", end='\n')
+            #
+            # print("Cluster 3: ")
+            # print (*Clustures_list3, sep=',')
+            # print ("Centroid: (",end='')
+            # print (*Centoroids_list, sep=',')
+            # print (")", end='\n')
 
             # increment iteration
             Iteration_num=Iteration_num+1

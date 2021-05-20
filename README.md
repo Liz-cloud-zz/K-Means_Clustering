@@ -1,5 +1,5 @@
 # Step 1 initialize number of clusters =3
-# Step 2 initialize select random points from data as centroids
+# Step 2 initialize select random points from data as centroids with number 1,4,7 coordinate points
 # Step 3  Assign all the points to the closest cluster a centroid Find the distance first from current point in data
 # Step 4 Recompute the centroids of the newly formed clusters
 # Step5 repeat 3 & 4
