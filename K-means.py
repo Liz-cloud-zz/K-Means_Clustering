@@ -74,7 +74,7 @@ Clustures_list1=[]
 Clustures_list2=[]
 Clustures_list3=[]
 Data_list=[[2, 2, 8, 5, 7, 6, 1, 4],[10, 5, 4, 8, 5, 4,2,9 ]]
-# Step 1 number of clusters =3
+# Step 1 initialize number of clusters =3
 k=3
 
 # Step 2 initialize select random points from data as centroids
