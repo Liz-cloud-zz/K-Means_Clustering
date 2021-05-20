@@ -20,6 +20,6 @@ Implement (in Python) the K-means clustering algorithm [Jin and Han, 2010] with 
 #  Recompute the centroids of the newly formed clusters
 
 # compare:
-# to compare the elements of two lists to see if they are the same
+# compare distances between old centroids list and new centroids list to see if they do not converge
 
 >>>>>>> 80509b5... Makefile
