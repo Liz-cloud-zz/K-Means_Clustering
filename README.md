@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# K-Means_Clustering
-Implement (in Python) the K-means clustering algorithm [Jin and Han, 2010] with a Euclidean distance metric. 
-=======
 # Step 1 initialize number of clusters =3
 # Step 2 initialize select random points from data as centroids with number 1,4,7 coordinate points
 # Step 3  Assign all the points to the closest cluster a centroid Find the distance first from current point in data
@@ -22,4 +18,3 @@ Implement (in Python) the K-means clustering algorithm [Jin and Han, 2010] with 
 # compare:
 # compare distances between old centroids list and new centroids list to see if they do not converge
 
->>>>>>> 80509b5... Makefile
