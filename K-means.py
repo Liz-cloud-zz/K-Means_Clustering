@@ -70,17 +70,17 @@ def compare(List2, List1):
     else:
         False
 
-Clustures_list1=[]
-Clustures_list2=[]
-Clustures_list3=[]
 Data_list=[[2, 2, 8, 5, 7, 6, 1, 4],[10, 5, 4, 8, 5, 4,2,9 ]]
 # Step 1 initialize number of clusters =3
 k=3
+Clustures_list1=[]
+Clustures_list2=[]
+Clustures_list3=[]
 
 # Step 2 initialize select random points from data as centroids
 Centoroids_list1=[2.0,10.0]  # type: float
 Centoroids_list2=[5.0,8.0]  # type: float
-Centoroids_list3=[1.0,2]  # type: float
+Centoroids_list3=[1.0,2.0]  # type: float
 
 Iteration_num=1
 for i in range(100000000):
@@ -92,14 +92,15 @@ for i in range(100000000):
         del Clustures_list2[:]
     if (len(Clustures_list3)!=0):
         del Clustures_list3[:]
+
     assignment(Centoroids_list1,Centoroids_list2,Centoroids_list3,Data_list,Clustures_list1,Clustures_list2,Clustures_list3)
 
     Prev_Centroid1=Centoroids_list1
     Prev_Centroid2=Centoroids_list2
     Prev_Centroid3=Centoroids_list3
 
+
     # Step 4 Recompute the centroids of the newly formed clusters
-    #recompute(Data_list,Clustures_list1,Clustures_list2,Clustures_list3,Centoroids_list1,Centoroids_list3,Centoroids_list2)
     Centoroids_list1=recompute(Data_list,Clustures_list1)
     Centoroids_list2=recompute(Data_list,Clustures_list2)
     Centoroids_list3=recompute(Data_list,Clustures_list3)
@@ -107,11 +108,11 @@ for i in range(100000000):
     flag1=compare(Centoroids_list2,Prev_Centroid2)
     flag2=compare(Centoroids_list3,Prev_Centroid3)
 
+
     # Step5 repeat 3 & 4
     # Condition to stop
     # Centroids of newly formed clusters do not change i.e.(Prev Centroids_list== Current Centroids_list)
     # Points remain in the same cluster i.e.(Prev Cluster1_list==Current Cluster1_list or Cluster2_list==Cluster2_list)
-
     if(flag0==True) & (flag2==True) &(flag1==True):
         break
     else:
@@ -122,21 +123,21 @@ for i in range(100000000):
             print(Clustures_list1[i])
         print("Centroid1: ")
         for i in range (len(Centoroids_list1)):
-            print(Centoroids_list1[i])
+            print(Prev_Centroid1[i])
 
         print("Cluster2: ")
         for i in range (len(Clustures_list2)):
             print(Clustures_list2[i])
         print("Centroid2: ")
         for i in range (len(Centoroids_list2)):
-            print(Centoroids_list2[i])
+            print(Prev_Centroid2[i])
 
         print("Cluster3: ")
         for i in range (len(Clustures_list3)):
             print(Clustures_list3[i])
         print("Centroid3: ")
         for i in range (len(Centoroids_list3)):
-            print(Centoroids_list3[i])
+            print(Prev_Centroid3[i])
 
     Iteration_num=Iteration_num+1
 
